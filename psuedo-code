@@ -1,0 +1,82 @@
+Switch (PlayerMoveCount)
+	case 0:
+		//machine makes first move as first
+		machine chooses a random corner, or center, or middle. 
+		/*Center and corner should be 3/4ths of the game and a random middle should be 1/4th the choice. Middle will 		not be included in version two. Version 3 will include middle plays. For now the machine does not start 			middle, and if the player starts middle than the machine simply chooses center.*/
+	case 1:
+		if (PlayerIsFirst) //machine makes first move acting second
+			if (center is not X)
+				machine chooses center
+			else 
+				machine chooses random corner
+
+		else //machine makes second move acting first. Begins compulsion in stage one tricks.
+			//center > corner
+			if (machine has center and player has a corner)
+				machine chooses opposite corner
+			//center > middle ..randomly selects one of the following 3
+			else if (machine has center and player has a middle)
+				machine chooses corner adjacent to player
+			else if (machine has center and player has a middle)
+				machine chooses middle adjacent to player
+			else if (machine has center and player has a middle)
+				machine chooses corner opposite of player
+			//corner > center
+			else if (machine has a corner and player has center)
+				machine chooses the corner opposite it's own
+			//corner > adj corner ..randomly selects one of the following 3
+			else if (machine has a corner and player has adjacent corner)
+				machine chooses the middle adj to its corner and opposite the player's corner
+			else if (machine has a corner and player has adjacent corner)
+				machine chooses the corner opposite the player's corner
+			else if (machine has a corner and player has adjacent corner)
+				machine chooses the corner opposite its own
+			//corner > opp corner
+			else if (machine has a corner and player has an opposite corner)
+				machine chooses remaining corner.
+			//corner > adj middle ..randomly selects one of the following 3
+			else if (machine has a corner and player has an adjacent middle)
+				machine chooses middle adjacent to itself
+			else if (machine has a corner and player has an adjacent middle)
+				machine chooses center
+			else if (machine has a corner and player has an adjacent middle)
+				machine chooses corner adjacent to itself and opposite player
+			//corner > opp middle ..randomly selects one of the following 3
+			else if (machine has a corner and player has an opposite middle)
+				machine chooses corner adjacent to itself and opposite player
+			else if (machine has a corner and player has an opposite middle)
+				machine chooses corner adjacent to both itself and the player
+			else if (machine has a corner and player has an opposite middle)
+				machine chooses center
+			
+	case 2:
+		if (PlayerIsFirst) //machine makes second move acting second
+			//avoids (corner > center > opp corner) trap
+			if (player has corner and machine has center and player has opposite corner)
+				machine chooses middle
+			//avoids (center > corner > opp corner) trap
+			else if (player has center and machine has corner and player has opposite corner)
+				machine chooses corner
+			
+		else //machine makes third move acting first. Takes position for a win pin.
+			//corner > adj corner
+			if (machine has corner and player has adjacent corner and machine has corner opposite of player)
+				machine chooses remaining corner
+			//corner > opp corner
+			else if (machine has corner and player has opposite corner and machine has corner)
+				machine chooses remaining corner
+			//corner > adj middle
+			else if (machine has corner and player has adjacent middle and machine has middle adjacent to itself)
+				machine chooses center
+			else if (machine has corner and player has adjacent middle and machine has center)
+				machine randomly chooses: corner opposite the player's middle OR middle adjacent to its own corner
+			else if (machine has corner and player has adjacent middle and machine has corner adjacent to itself and opposite player's middle)
+				machine randomly chooses: center OR corner opposite both player's middles
+			//corner > opp middle
+			else if (machine has corner and player has opposite middle and machine has corner adjacent to itself and the player's middle)
+				machine randomly chooses: center OR corner opposite both of opponent's middles
+			//center > middle
+			else if (machine has center and player has middle and machine has adjacent corner to player)
+				machine randomly chooses: corner opposite player's middle OR middle adjacent to its own corner
+			else if (machine has center and player has middle and machine has middle adjacent to player's middle)
+				machine randomly chooses: corner opposite both of player's middles OR corner adjacent to its middle
