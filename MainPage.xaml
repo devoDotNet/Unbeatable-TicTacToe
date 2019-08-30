@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TicTacToe"
+             x:Class="TicTacToe.MainPage"
+             x:Name="myContentPage"
+             Padding="10"
+             SizeChanged="OnSizeChanged"
+             >
+
+    <StackLayout Padding="0, 20, 0, 50">
+
+        <Label  x:Name="displayLabel"
+                Text="resistance is futile..."
+                Font="consolas"
+                FontSize="Small"
+                FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                
+        />
+
+        <Grid  HorizontalOptions="Center" VerticalOptions="Center" Padding="0, 30, 0, 30">
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="60"  />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="60" />
+
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="oneButton"
+                    Grid.Row="0"
+                    Grid.Column="0"                    
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="OnButton_Clicked"
+                    Font="consolas"
+                    Text="T"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    TextColor="WhiteSmoke"
+            />
+
+            <Button x:Name="twoButton"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="OnButton_Clicked"
+                   Font="consolas"
+                    Text="I"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    TextColor="WhiteSmoke"
+            />
+
+            <Button x:Name="threeButton"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="OnButton_Clicked"
+                   Font="consolas"
+                    Text="C"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    TextColor="WhiteSmoke"
+            />
+
+            <Button x:Name="fourButton"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="OnButton_Clicked"
+                   Font="consolas"
+                    Text="T"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    TextColor="WhiteSmoke"
+            />
+
+            <Button x:Name="fiveButton"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="OnButton_Clicked"
+                  Font="consolas"
+                    Text="A"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    TextColor="WhiteSmoke"
+            />
+
+            <Button x:Name="sixButton"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="OnButton_Clicked"
+                  Font="consolas"
+                    Text="C"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    TextColor="WhiteSmoke"
+            />
+
+            <Button x:Name="sevenButton"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="OnButton_Clicked"
+                  Font="consolas"
+                    Text="T"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    TextColor="WhiteSmoke"
+            />
+
+            <Button x:Name="eightButton"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="OnButton_Clicked"
+                   Font="consolas"
+                    Text="O"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    TextColor="WhiteSmoke"
+            />
+
+            <Button x:Name="nineButton"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="OnButton_Clicked"
+                    Font="consolas"
+                    Text="E"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    TextColor="WhiteSmoke"
+            />
+
+        </Grid>
+
+        <Button x:Name="resetButton"                   
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand" 
+                Text="reset"
+                FontSize="Micro"
+                TextColor="Black"
+                Font="consolas"
+                Clicked="ResetButton_Clicked"
+        />
+
+        <Button x:Name="priorityButton"                   
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Center" 
+                Text="act second"
+                FontSize="Micro"
+                TextColor="Black"
+                Font="consolas"
+                Clicked="PriorityButton_Clicked"
+        />
+
+    </StackLayout>
+
+</ContentPage>
