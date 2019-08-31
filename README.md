@@ -1,2 +1,2 @@
 # Unbeatable-TicTacToe
-An unbeatable TicTacToe game written in Xamarin. The player may draw, but cannot win.
+An unbeatable TicTacToe game developed in Xamarin. The player may draw, but cannot win.
